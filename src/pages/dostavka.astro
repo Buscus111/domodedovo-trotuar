@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import delivery from '../data/delivery.json';
+
+const page = delivery;
+---
+
+<Layout title={page.metaTitle} description={page.metaDescription}>
+  <section aria-labelledby="delivery-title">
+    <h1 id="delivery-title">{page.title}</h1>
+    <p>{page.intro}</p>
+  </section>
+
+  <section aria-labelledby="zones-title">
+    <h2 id="zones-title">{page.zonesTitle}</h2>
+    <p>{page.zonesText}</p>
+  </section>
+</Layout>

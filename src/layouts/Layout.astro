@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Тротуарная плитка в Домодедово – Домодедово Тротуар',
+  description = 'Производство и укладка тротуарной плитки, бордюров и водостоков в Домодедово и по Московской области.',
+} = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Домодедово Тротуар</a>
+        <ul>
+          <li><a href="/produkciya">Продукция</a></li>
+          <li><a href="/ukladka-plitki">Укладка плитки</a></li>
+          <li><a href="/nashi-raboty">Наши работы</a></li>
+          <li><a href="/dostavka">Доставка</a></li>
+          <li><a href="/kontakty">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <section>
+        <p>© {new Date().getFullYear()} Домодедово Тротуар</p>
+        <p>Тротуарная плитка и укладка в Домодедово и Московской области.</p>
+      </section>
+    </footer>
+  </body>
+</html>
+
+

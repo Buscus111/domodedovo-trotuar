@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import laying from '../data/laying.json';
+
+const page = laying;
+---
+
+<Layout title={page.metaTitle} description={page.metaDescription}>
+  <section aria-labelledby="laying-title">
+    <h1 id="laying-title">{page.title}</h1>
+    <p>{page.intro}</p>
+  </section>
+
+  <section aria-labelledby="steps-title">
+    <h2 id="steps-title">{page.stepsTitle}</h2>
+    <ol>
+      {page.steps.map((step) => (
+        <li>{step}</li>
+      ))}
+    </ol>
+  </section>
+
+  <section aria-labelledby="price-title">
+    <h2 id="price-title">{page.priceTitle}</h2>
+    <p>{page.priceText}</p>
+  </section>
+</Layout>

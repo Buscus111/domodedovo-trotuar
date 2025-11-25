@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import contacts from '../data/contacts.json';
+
+const page = contacts;
+---
+
+<Layout title={page.metaTitle} description={page.metaDescription}>
+  <section aria-labelledby="contacts-title">
+    <h1 id="contacts-title">{page.title}</h1>
+    <p>{page.intro}</p>
+  </section>
+
+  <section aria-labelledby="map-title">
+    <h2 id="map-title">{page.mapTitle}</h2>
+    <p>{page.mapText}</p>
+  </section>
+</Layout>

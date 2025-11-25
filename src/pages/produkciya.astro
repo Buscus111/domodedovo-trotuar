@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import products from '../data/products.json';
+
+const page = products;
+---
+
+<Layout title={page.metaTitle} description={page.metaDescription}>
+  <section aria-labelledby="catalog-title">
+    <h1 id="catalog-title">{page.title}</h1>
+    <p>{page.intro}</p>
+  </section>
+
+  {page.categories.map((category) => (
+    <section aria-labelledby={category.slug}>
+      <h2 id={category.slug}>{category.title}</h2>
+      <p>{category.description}</p>
+
+      {category.items.length > 0 && (
+        <ul>
+          {category.items.map((item) => (
+            <li>
+              <strong>{item.name}</strong>
+              {item.color && ` — ${item.color}`}
+              <br />
+              {item.size && `Размер: ${item.size}. `}
+              {item.technology && `Технология: ${item.technology}. `}
+              {item.pricePerM2 && `${item.pricePerM2} ${item.unit}`}
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  ))}
+</Layout>
