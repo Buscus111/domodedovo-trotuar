@@ -2,14 +2,11 @@
 import '../styles/global.css';
 
 interface Props {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
 }
 
-const {
-  title = 'Тротуарная плитка в Домодедово – Домодедово Тротуар',
-  description = 'Производство и укладка тротуарной плитки, бордюров и водостоков в Домодедово и по Московской области.',
-} = Astro.props as Props;
+const { title, description } = Astro.props as Props;
 ---
 
 <!doctype html>
